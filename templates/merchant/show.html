@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Current list of Merchants</h3>
+<P>Click on a Merchant to amend its details</P>
+<div>
+    {% for merchant in all_merchants %}
+    <p><a href="/merchant/{{merchant.id}}/amend-merchant">{{merchant.merchant_name}} - {{merchant.merchant_tag.tag_name}}</p>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

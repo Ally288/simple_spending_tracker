@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/merchant/{{merchant.id}}/amend-merchant" method="POST">
+    <h3>Amend Merchant</h3>
+    <div>
+        <label for="merchant-name">Merchant Name</label>
+        <input type="text" id="name" name="merchant-name" value="{{merchant.merchant_name}}" required autofocus>
+    </div>
+    <div>
+        <label for="merchant-tag">Tag:</label>
+        <select name="merchant-tag">
+            {% for tag in all_tags %}
+            <option value="none" selected disabled hidden>Select a Tag</option>
+            <option value={{tag.id}}>{{tag.tag_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <p></p>
+    <button type="submit">Update Merchant</button>
+</form>
+    {% endblock %}

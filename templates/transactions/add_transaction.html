@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/add-transaction" method="POST">
+
+<div>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" placeholder="Select Date..." required autofocus>
+</div>
+<div>
+    <label for="merchant">Merchant:</label>
+    <select name="merchant_id">
+        {% for merchant in all_merchants %}
+        <option value="none" selected disabled hidden>Select a Merchant</option>
+        <option value={{merchant.id}}>{{merchant.merchant_name}}</option>
+        {% endfor %}
+    </select>
+</div>
+<div>
+    <label for="tag">Tag:</label>
+    <select name="tag_id">
+        {% for tag in all_tags %}
+        <option value="none" selected disabled hidden>Select a Tag</option>
+        <option value={{tag.id}}>{{tag.tag_name}}</option>
+        {% endfor %}
+    </select>
+</div>
+<div>
+    <label for="amount">Amount (£):</label>
+    <input type="text" id="amount" name="amount" placeholder="enter amount" required autofocus>
+</div>
+<p></p>
+<button type="submit">Add Transaction</button>
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+    <h1>Your Transactions</h1>   
+    <div class="'transactions">
+        <table id="transactions">
+        <h3 class="total-header">Your Total Spendings: £{{total}}</h3>
+        <h4 class="budget-amt-header">Your remaining budget: £</h4>
+        <h4><a class="budget-link" href="/budgeting">Review/ Amend Your Budget</h4>
+
+        <div class="transaction-table">
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Merchant</th>
+                <th scope="col">Type (tag)</th>
+                <th scope="col">Amount (£)</th>
+            </tr>
+            {% for transaction in all_transactions %}
+            <tr>
+                <th scope="table-row">{{transaction.transaction_date}}</th>
+                <td>{{transaction.merchant.merchant_name}}</td>
+                <td>{{transaction.tag.tag_name}}</td>
+                <td>{{transaction.transaction_amount}}</td>
+            </tr>
+        </div>
+            {% endfor %}
+            <ul class="add-transaction" style="list-style: none;"> 
+                <li><a class="transaction-add-link" href="/add-transaction">Add a Transaction</a></li>
+            </p>
+            </ul>
+    </div>
+        </table>
+        
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/create-merchant" method="POST">
+    <h3>Merchant Creation</h3>
+    <div>
+        <label for="merchant_name">Enter a Merchant Name:</label>
+        <input type="text" id="merchant_name" name="merchant_name" placeholder="e.g. Tesco" required autofocus>
+    </div>
+    <div>
+        <label for="merchant_tag">Select Merchant Tag:</label>
+        <select name="tag_id">
+            {% for tag in all_tags %}
+            <option value="none" selected disabled hidden>Select a Tag</option>
+            <option value={{tag.id}}>{{tag.tag_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <p></p>
+    <button type="submit">Create Merchant</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+body {
+    background: url('https://img.freepik.com/free-vector/blue-diagonal-geometric-stripe-background_1409-1237.jpg?w=2000');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    font-family: "Verdana", "Verdana", cursive;
+    padding: 0px;
+    margin: 20px;
+}
+
+
+.logo {
+    display: flex;
+    background-image: url('/static/images/logo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20%;
+    padding: 0px;
+    margin: 0px;
+    width: 200px;
+    height: 200px;
+}
+
+.button-wrapper {
+    display:flex;
+    align-items:stretch;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+a:link {
+    color:red;
+}
+
+a:visited {
+    color:yellow;
+}
+
+a:hover {
+    color:white;
+}
+
+body > header {
+    text-align:left;
+    margin: 5%;
+}
+
+.welcome-head{
+    color: gold
+
+}
+
+table, th, td {
+    border: 1px solid rgb(255, 255, 255);
+    width: 800px;
+}

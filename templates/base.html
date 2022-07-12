@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Simple Spending Tracker</title>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <p class="button-wrapper">
+            <ul class="menu", style="list-style: none;"> 
+                <li><a class="menuli mainlinks" href="/home">Home</a></li>
+                <li><a class="menuli mainlinks" href="/contact">Contact Us</a></li>
+                <li><a class="menuli mainlinks" href="/about">About Us</a></li>
+            </p>
+            </ul>
+        </nav>
+    </header>
+    <div class="welcome-head">
+        <h1>Welcome to your CodeClan Gold Account</h1>
+        <p></p>
+    </div>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    {%block home%}
+    {% endblock %}
+    
+    <footer>
+        <div id="'footer-container">
+        <section>
+            <h2>Our Site</h2>
+            <nav>
+                <p class="button-wrapper">
+                <ul style="list-style: none;">
+                    <li><a class="menuli mainlinks" href="/home">Home</a></li>
+                    <li><a class="menuli mainlinks" href="/contact">Contact Us</a></li>
+                    <li><a class="menuli mainlinks" href="/about">About Us</a></li>
+                </ul>
+                </p>
+            </nav>
+        </section>
+        <section>
+            <h2>Important Files</h2>
+            <nav>
+                <p class="button-wrapper">
+                <ul style="list-style: none;">
+                    <li><a class="menuli mainlinks" href="/cookie-policy">Cookie Policy</a></li>
+                    <li><a class="menuli mainlinks" href="/legal-information">Legal Information</a></li>
+                </ul>
+                </p>
+            </nav>
+        </section>
+        </div>
+    </footer>
+</body>
+</html>
